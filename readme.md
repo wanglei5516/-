@@ -1,5 +1,5 @@
-密钥       6a57f49525e15b9298dbac846cc8abd3
-id	wxa07a2eebab1af108
+密钥      自己配，在app.js更改
+id	      自己配，在app.js更改
 本地数据库 mongodb://localhost/shitang
 
 使用说明：
