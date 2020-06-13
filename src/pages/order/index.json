@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
+  },
+  "navigationBarTitleText": "我的订单",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#FF7F50"
+}

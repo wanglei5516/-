@@ -1,0 +1,34 @@
+.container{
+  width:96vw;
+  margin: 0 auto;
+}
+.my-header{
+  display: block;
+  width: 100%;
+  background-color: white;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.info{
+  padding-left: 20rpx;
+  background-color: white;
+}
+.info view{
+  border-bottom: 1px solid #f2f2f2;
+  height: 80rpx;
+  line-height: 80rpx;
+}

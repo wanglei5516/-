@@ -1,0 +1,60 @@
+<view class="sellers">
+  <view class="sellers-header">
+    <view>欢迎来到{{sel.name}}！</view>
+    <view>地址：{{sel.location}}</view>
+  </view>
+  
+  <view class="sellers-middle">
+    <view style="color:#FF7F50">菜单</view>
+  </view>
+  <!-- 菜单 -->
+  <view class="sellers-content">
+    <!-- 左侧 -->
+    <view class="menu-left">
+      <view class="classify" wx:for='{{classify}}' wx:key='item.id'>
+        <view class="{{num==item.id?'active':''}}" bindtap="changeclassify" data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 右侧 -->
+    <scroll-view class="menu-right" scroll-y="true" scroll-into-view="{{toView}}">
+      <view wx:for='{{all}}' wx:for-item='it'>
+          <view id="all{{it.id}}" class="classifyinfo">{{it.name}}</view>
+          <view class="dish" wx:for='{{it.dishes}}'>
+            <view class="dish"  data-id="item.classify_id">
+            <!-- 图片 -->
+            <view class='img'>
+              <image src="{{item.img}}"  mode="scaleToFill"/>
+            </view>
+            <!-- 信息 -->
+            <view class='info'>
+              <view class='name'>{{item.name}}</view>
+              <!-- 价钱和数量 -->
+              <view class="hang">
+                <view class='price'>{{item.price}}元/份</view>
+                <!-- 数量 -->
+                <view class="number">
+                  <!-- 按钮调整数量盒子 -->
+                  <view class='num-box'>
+                  　　<view class="btn btn-minus"  bindtap='minusNum' data-id="{{item.id}}" data-classifyid="{{item.classify_id}}">-</view>
+                      <text class="num" >{{item.num}}</text>
+                  　　<view class="btn btn-add" bindtap='addNum' data-id="{{item.id}}" data-classifyid="{{item.classify_id}}">+</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <!-- 信息结束 -->
+            </view>
+            <!-- dish结束 -->
+          </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 底部 -->
+  <view class="sellers-footer">
+    <view class="btn-cart">
+      <view class="btn-cart-left">餐费：{{price}}元  配送费：{{sel.fee}}元</view>
+      <view class="btn-cart-right" bindtap="goOrder">结算</view>
+    </view>  
+  </view>
+ 
+</view>

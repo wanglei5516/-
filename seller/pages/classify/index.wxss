@@ -1,0 +1,48 @@
+.classify{
+  font-size: 40rpx;
+}
+.menu-left{
+  display: flex;
+  flex-direction: column;
+  width:96vw;
+  margin: 0 auto;
+  height: 92vh;
+  overflow: scroll;
+}
+.classify-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px solid #FF7F50;
+}
+.option{
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+  height: 30px;
+  line-height: 30px;
+  color: white;
+}
+.butt{
+  width: 14vw;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #FF7F50;
+}
+.footer{
+  display: fixed;
+  bottom: 0;
+  background-color: #FF7F50;
+  border-radius: 40rpx;
+  color: white;
+  height: 8vh;
+  line-height: 8vh;
+  text-align: center;
+}

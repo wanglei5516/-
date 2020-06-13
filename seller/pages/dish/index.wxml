@@ -1,0 +1,27 @@
+<view class="dishpage">
+  <view class="menu-left">
+      <!-- 每一项 -->
+      <view class="dish" wx:for='{{dish}}' wx:key='{{item.id}}' data-id="{{item.id}}" data-classify="{{item.classify_id}}">
+          <!-- 图片 -->
+          <view class='img'>
+            <image src="{{item.img}}"  mode="scaleToFill"/>
+          </view>
+          <!-- 信息 -->
+          <view class='info'>
+            <view class='name'>{{item.classify}}·{{item.name}}</view>
+            <!-- 价钱 -->
+            <view class="hang">
+              <view class='price'>{{item.price}}元/份</view>
+            </view>
+          </view>
+        <!-- 操作 -->
+        <view class="option">
+          <!-- 编辑 -->
+          <view class="butt" bindtap="edit" data-id="{{item.id}}" data-index="{{index}}" data-classify="{{item.classify_id}}">编辑</view>
+          <!-- 删除 -->
+          <view class="butt" bindtap="delete" data-id="{{item.id}}" data-index="{{index}}" data-classify="{{item.classify_id}}">删除</view>
+        </view>
+      </view>
+  </view>
+  <view class="footer" bindtap="add">添加菜品</view>
+</view>

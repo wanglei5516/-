@@ -1,0 +1,48 @@
+<view class="sellers">
+  <view class="sellers-header">
+    <view>欢迎来到{{seller.name}}！</view>
+    <view>地址：{{seller.location}}</view>
+  </view>
+  
+  <view class="sellers-middle">
+    <view style="color:#FF7F50">菜单</view>
+  </view>
+  <!-- 菜单 -->
+  <view class="sellers-content">
+    <!-- 左侧 -->
+    <view class="menu-left">
+      <view class="classify" wx:for='{{classify}}' wx:key='item.id' >
+        <view class="{{num==item.id?'active':''}}" bindtap="changeclassify" data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 右侧 -->
+    <scroll-view class="menu-right" scroll-y="true" scroll-into-view="{{toView}}">
+        <view wx:for='{{all}}' wx:for-item='it'>
+          <view id="all{{it.id}}" class="classifyinfo">{{it.name}}</view>
+          <view class="dish" wx:for='{{it.dishes}}'>
+            <view class="dish"  data-id="item.classify_id">
+              <!-- 图片 -->
+              <view class='img'>
+                <image src="{{item.img}}"  mode="scaleToFill"/>
+              </view>
+              <!-- 信息 -->
+              <view class='info'>
+                <view class='name'>{{item.name}}</view>
+                <!-- 价钱 -->
+                <view class="hang">
+                  <view class='price'>{{item.price}}元/份</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+    </scroll-view>
+  </view>
+  <!-- 底部 -->
+  <view class="sellers-footer">
+    <view class="action">
+      <view class="add-classify" bindtap="manageClassify">分类管理</view>
+      <view class="add-dish" bindtap="manageDish">菜品管理</view>
+    </view>  
+  </view>
+</view>

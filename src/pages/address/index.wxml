@@ -1,0 +1,23 @@
+<view class="classify">
+  <view class="menu-left">
+      <!-- 每一项 -->
+      <view class="classify-item" wx:for='{{addresslist}}' data-id="{{index}}">
+        <!-- 名称 -->
+        <view class="info">
+            <view class="name">姓名：{{item.name}}</view>
+            <view class="name">电话：{{item.phone}}</view>
+            <view class="name">地址：{{item.location}}</view>
+            <view class="name" wx:if="{{item.state==true}}">默认收货地址</view>
+            <view class="name" wx:if="{{item.state==false}}">普通收货地址</view>
+        </view>
+        <!-- 操作 -->
+        <view class="option">
+          <!-- 编辑 -->
+          <view class="butt" bindtap="edit" data-id="{{index}}" data-index="{{index}}">编辑</view>
+          <!-- 删除 -->
+          <view class="butt" style="margin-top:10px" bindtap="delete" data-id="{{index}}" data-index="{{index}}">删除</view>
+        </view>
+      </view>
+  </view>
+  <view class="footer" bindtap="add">添加地址</view>
+</view>

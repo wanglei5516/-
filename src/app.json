@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/buy/index",
+    "pages/order/index",
+    "pages/my/index",
+    "pages/sellers/index",
+    "pages/detail/index",
+    "pages/address/index",
+    "pages/addaddress/index",
+    "pages/updateaddress/index",
+    "pages/orderdetail/index"
+  ],
+  "tabBar": {
+    "selectedColor": "#FF7F50",
+    "list": [
+      {
+        "pagePath": "pages/buy/index",
+        "text": "首页",
+        "iconPath": "./images/首页1.png",
+        "selectedIconPath": "./images/首页2.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "./images/清单1.png",
+        "selectedIconPath": "./images/清单2.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "./images/用户1.png",
+        "selectedIconPath": "./images/用户2.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF7F50",
+    "navigationBarTitleText": "食堂外卖",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  }
+}

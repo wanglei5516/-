@@ -1,0 +1,45 @@
+<!--pages/detail/index.wxml-->
+<view class="detail">
+  <view class="auto" >
+    <view class="useradd">
+      <view>收货人：{{order.useradd.name}}</view>
+      <view>联系电话：{{order.useradd.phone}}</view>
+      <view>收获地址：{{order.useradd.location}}</view>
+    </view>
+    <view class="selleradd">
+      <view>商家名称：{{order.selleradd.name}}</view>
+      <view>商家电话：{{order.selleradd.phone}}</view>
+      <view>商家地址：{{order.selleradd.location}}</view>
+    </view>
+    <!-- 口袋 -->
+    <view class="menu-right">
+      <view class="dish" wx:for='{{cart}}' wx:for-item="item">
+        <!-- 图片 -->
+        <view class='img'>
+          <image src="{{item.img}}"  mode="scaleToFill"/>
+        </view>
+        <!-- 信息 -->
+        <view class='info'>
+          <view class='name'>{{item.name}}</view>
+          <!-- 价钱和数量 -->
+          <view class="hang">
+            <view class='price'>{{item.price}}元/份</view>
+            <!-- 数量 -->
+            <view class="number">
+              <!-- 数量 -->
+              <view class='num-box'>
+                <text class="num" style="padding-right:20rpx">✖{{item.num}}份</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="detail-footer">
+      <view class="top">餐费：{{order.price-order.fee}}元  配送费：{{order.fee}}元</view>
+      <view class="bottom">合计：{{order.price}}元</view>
+    </view>
+    <view class="comment" wx:if="{{order.state==3}}">买家评论：{{order.comment}}</view>
+    <view class="comment" wx:else>暂无评论</view>
+  </view>
+</view>

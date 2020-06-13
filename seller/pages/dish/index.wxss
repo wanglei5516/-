@@ -1,0 +1,84 @@
+.dishpage{
+  font-size: 40rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-left{
+  display: flex;
+  flex-direction: column;
+  width: 96vw;
+  margin: 0 auto;
+  height: 92vh;
+  overflow: scroll;
+}
+.dish{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1px solid #FF7F50;
+}
+.img{
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  height: 100rpx;
+  margin-top: 10rpx;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+}
+.name{
+  height: 60rpx;
+  line-height: 40rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.price{
+  color: #FF7F50;
+}
+.hang{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.option{
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: white;
+}
+.butt{
+  width: 14vw;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #FF7F50;
+}
+.footer{
+  display: fixed;
+  bottom:0;
+  background-color: #FF7F50;
+  border-radius: 40rpx;
+  color: white;
+  height: 8vh;
+  line-height: 8vh;
+  text-align: center;
+}

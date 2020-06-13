@@ -1,0 +1,23 @@
+<view class="classify">
+  <view class="menu-left">
+      <!-- 每一项 -->
+      <view class="classify-item" wx:for='{{classify}}' wx:key='{{item.id}}' data-id="{{item.id}}">
+        <!-- 名称 -->
+        <view class="name">{{item.name}}</view>
+        <!-- 操作 -->
+        <view class="option">
+          <!-- 编辑 -->
+          <view class="butt" bindtap="edit" data-id="{{item.id}}" data-index="{{index}}">编辑</view>
+          <!-- 删除 -->
+          <view class="butt" bindtap="delete" data-id="{{item.id}}" data-index="{{index}}">删除</view>
+        </view>
+      </view>
+  </view>
+  <view class="footer" bindtap="add">添加分类</view>
+  <modal hidden="{{hiddenmodalput}}" title="添加分类" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <input class="newclassify" type='text' placeholder="请输入内容" bindinput="newinput" auto-focus/>
+  </modal>
+  <modal hidden="{{hiddenmodalput2}}" title="编辑分类" confirm-text="确认" cancel-text="取消" bindcancel="cancel2" bindconfirm="confirm2">
+    <input class="updateclassify" type='text' placeholder="请输入内容" bindinput="updateinput" auto-focus/>
+  </modal>
+</view>

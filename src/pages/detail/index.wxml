@@ -1,0 +1,54 @@
+<!--pages/detail/index.wxml-->
+<view class="detail">
+  <view class="auto">
+    <view class="useradd" wx:if="{{hasDefault==true}}" bindtap="toaddress">
+      <view>收货人：{{default.name}}</view>
+      <view>联系电话：{{default.phone}}</view>
+      <view>收获地址：{{default.location}}</view>
+    </view>
+    <view class="useradd toaddaddress" wx:else bindtap="toaddress">选择收货地址</view>
+    <view class="selleradd">
+      <view>商家名称：{{seller.name}}</view>
+      <view>商家电话：{{seller.phone}}</view>
+      <view>商家地址：{{seller.location}}</view>
+    </view>
+    <!-- 口袋 -->
+    <view class="menu-right">
+      <view class="dish" wx:for='{{cart}}' wx:for-item="item">
+        <!-- 图片 -->
+        <view class='img'>
+          <image src="{{item.img}}"  mode="scaleToFill"/>
+        </view>
+        <!-- 信息 -->
+        <view class='info'>
+          <view class='name'>{{item.name}}</view>
+          <!-- 价钱和数量 -->
+          <view class="hang">
+            <view class='price'>{{item.price}}元/份</view>
+            <!-- 数量 -->
+            <view class="number">
+              <!-- 按钮调整数量盒子 -->
+              <view class='num-box'>
+            　　<view class="btn btn-minus"  bindtap='minusNum' data-id="{{item.id}}">-</view>
+                <text class="num" >{{item.num}}</text>
+            　　<view class="btn btn-add" bindtap='addNum' data-id="{{item.id}}">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="detail-footer">
+      <view class="top">餐费：{{price}}元  配送费：{{seller.fee}}元</view>
+      <view class="bottom">合计：{{price+seller.fee}}元</view>
+    </view>
+  </view>
+  <view class="pay" bindtap="paySuccess">立即支付</view>
+</view>
+ <!-- 遮罩层 -->
+<view class="{{hidden==true? 'none' : 'pop-up' }}" bindtap="end">
+  <view class="pop-up-container">
+    <icon type="success" size="93"></icon>
+    <view>支付成功</view>
+  </view> 
+</view>

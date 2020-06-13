@@ -1,0 +1,138 @@
+.detail{
+  font-size: 32rpx;
+}
+.auto{
+  height: 1100rpx;
+  overflow: auto;
+}
+/* 用户 */
+.useradd{
+  padding-left: 20rpx;
+  height: 150rpx;
+  border-bottom: 1px solid #FF7F50;
+}
+.toaddaddress{
+  width: 90vw;
+  height: 150rpx;
+  line-height: 150rpx;
+  /* background-color: #FF7F50; */
+  text-align: center;
+}
+/* 商家 */
+.selleradd{
+  padding-left: 20rpx;
+  height: 150rpx;
+  border-bottom: 1px solid #FF7F50;
+}
+/* 口袋 */
+.menu-right{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  width: 96vw;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #FF7F50;
+}
+.dish{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+}
+.img{
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 100rpx;
+  height: 100rpx;
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  padding-left: 10px;
+  flex:1;
+  height: 120rpx;
+  margin-top: 10rpx;
+}
+
+.price{
+  color: #FF7F50;
+}
+.hang{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+
+/* 数字按钮组件 */
+.number{
+  display: inline-block;
+  height: 40rpx;
+}
+.num-box{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-right: 2vw;
+  /* float: left; */
+}
+.num-box view{
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #FF7F50;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.num{
+  margin-left: 40rpx;
+  margin-right: -30rpx;
+}
+/* 支付 */
+.pay{
+  height: 80rpx;
+  width: 100vw;
+  display: block;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #FF7F50;
+  color: #fff;
+  font-size: 40rpx;
+  position: fixed;
+  bottom: 0
+}
+/* 遮罩层 */
+.pop-up{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.none{
+  display: none;
+}
+.pop-up-container{
+  width: 300rpx;
+  height: 400rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detail-footer{
+  padding-left: 20rpx;
+}

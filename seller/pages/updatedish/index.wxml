@@ -1,0 +1,42 @@
+
+<view class="updatedish">
+  <form catchsubmit="formSubmit">
+    <view class="con">
+      <view class="con-nr">
+        <text>名称</text>
+        <input placeholder="请输入名称" type="text" name="name" value="{{initialname}}"></input>
+      </view>
+      <view class="con-nr">
+        <text>单价</text>
+        <input placeholder="请输入单价" type="number" name="price" value="{{initialprice}}"></input>
+      </view>
+      <view class="con-nr">
+        <!-- <view class="classify" bindtap="chooseClassify">请选择分类</view>
+        <view class="section__title">普通选择器</view> -->
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{newclassify}}" >
+            <view class="picker">
+                选择分类:<text style="margin-left:50rpx;padding-top:6rpx">{{newclassify[index]}}</text>
+            </view>
+        </picker>
+      </view>
+      <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">图片上传</view>
+          </view>
+          <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                  <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="updateImg" id="{{imgurl}}">
+                      <image class="weui-uploader__img" src="{{imgurl}}" mode="aspectFill" />
+                  </view>
+              </view>
+              <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+          </view>
+      </view>
+    </view>
+    <button class="sub" style="width:96vw" formType='submit'>保存</button>
+  </form>
+</view>
+    
+               

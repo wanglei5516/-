@@ -1,0 +1,47 @@
+<!--pages/buy/index.wxml-->
+<view class="buy">
+    <view class="buy_header">
+        <view class="search_box">
+            <view class="search_form">
+                <input class="search_input" placeholder="查找商家" placeholder-style="color:#ccc;text-align:center;font-size:0.9rem"  type="text" bindinput="bindinput" value="{{inputvalue}}" bindconfirm="search"/>
+            </view>
+        </view>
+        <view class="buy_middle">
+            <view class='sort-wrap'>
+                <view class='sort-btn' bindtap="choosesort">
+                  <text>综合</text>
+                  <image src="{{imageurl1}}" mode="scaleToFill"></image>
+                </view>
+                <view class='sort-btn' bindtap="choosesort1">
+                    <text>销量</text>
+                    <image src="{{imageurl1}}" mode="scaleToFill"></image>
+                </view>
+                <view class='sort-btn' bindtap="choosesort2">
+                    <text>配送费</text>
+                    <image src="{{imageurl2}}" mode="scaleToFill"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+    <view class='list' wx:if="{{exist==true}}">
+      <block wx:for='{{sellers}}' wx:key='index' wx:for-item="item">
+      <view class="list_item">
+          <navigator url='../sellers/index?id={{item.id}}'>
+          <view class='img'>
+            <image src="{{item.img}}"  mode="scaleToFill"/>
+          </view>
+          <view class='info'>
+            <view class='title'>{{item.name}}</view>
+            <view class='address'>{{item.location}}</view>
+            <view class='num'>
+            <text class='price'>销量{{item.num}}</text>
+            配送费<text style="color:#FF7F50">{{item.fee}}</text>元</view>
+          </view>
+          </navigator>
+          <view class='clear'></view>
+      </view>
+      </block>
+    </view> 
+    <view wx:else></view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/my/index.wxml-->
+<!--index.wxml-->
+<view class="container">
+    <view class="my-header">
+        <view class="userinfo">
+            <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 
+            </button>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+    </view>
+    <view class="info">
+        <view class="name" bindtap="edit">名称：{{seller.name}}</view>
+        <view class="phone" bindtap="edit2">电话：{{seller.phone}}</view>
+        <view class="location" bindtap="edit3">地址：{{seller.location}}</view>
+    </view>
+    <modal hidden="{{hiddenmodalput}}" title="更改名称" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+        <input type='text' placeholder="请输入名称" bindinput="newinput" auto-focus/>
+    </modal>
+    <modal hidden="{{hiddenmodalput2}}" title="更改电话" confirm-text="确认" cancel-text="取消" bindcancel="cancel2" bindconfirm="confirm2">
+        <input type='number' placeholder="请输入电话" bindinput="updateinput" auto-focus/>
+    </modal>
+    <modal hidden="{{hiddenmodalput3}}" title="更改地址" confirm-text="确认" cancel-text="取消" bindcancel="cancel3" bindconfirm="confirm3">
+        <input type='text' placeholder="请输入地址" bindinput="locinput" auto-focus/>
+    </modal>
+</view>
+

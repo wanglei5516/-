@@ -1,0 +1,19 @@
+/**app.wxss**/
+@import "weui.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  box-sizing: border-box;
+  background-color: #eee;
+} 
+page {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  /* font-family:"PingFangSC-Thin"; */
+  font-size:40rpx;  
+}

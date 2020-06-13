@@ -1,0 +1,37 @@
+.updatedish{
+  width: 96vw;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  font-size: 36rpx;
+}
+.con{
+  display: flex;
+  flex-direction: column;
+}
+
+.con-nr{
+  border-bottom:1px solid #FF7F50;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.con-nr input{
+  width: 80%;
+  height: 70rpx;
+  margin: auto 0 auto 50rpx;
+}
+picker{
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.sub{
+  text-align:center;
+  color: white;
+  margin-top: 20rpx;
+  background-color:#FF7F50;
+  border-radius:20rpx;
+}

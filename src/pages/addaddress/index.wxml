@@ -1,0 +1,27 @@
+
+<view class="adddish">
+  <form catchsubmit="formSubmit">
+    <view class="con">
+      <view class="con-nr">
+        <text>姓名</text>
+        <input placeholder="请输入姓名" type="text" name="name"></input>
+      </view>
+      <view class="con-nr">
+        <text>电话</text>
+        <input placeholder="请输入电话" type="number" name="phone"></input>
+      </view>
+      <view class="con-nr">
+        <text>地址</text>
+        <input placeholder="请输入地址" type="text" name="location"></input>
+      </view>
+      <view class="con-nr">
+        <label class="radio" catchtap="statechange">
+          <radio  checked="{{state}}"/>设为默认收货地址
+        </label>
+      </view>
+    </view>
+    <button class="sub" style="width:96vw" formType='submit'>提交</button>
+  </form>
+</view>
+    
+               

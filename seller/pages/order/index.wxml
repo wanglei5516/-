@@ -1,0 +1,109 @@
+<!--pages/order/index.wxml-->
+<view class="order">
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>未接单</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>配送中</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>已完成</view>
+  </view>
+  <swiper current="{{currentData}}" class='swiper' style="height:900px;" duration="300" bindchange="bindchange">
+    <swiper-item style="height:900px;">
+      <view class='swiper_con'>
+        <!-- 循环第一个，处理orderlist分类 -->
+        <block wx:for="{{orderList0}}">
+          <view class="orderList">
+            <view class="order-title">
+              <view class="order-title-restaurantName">
+                {{item.selleradd.name}}</view>
+              <view class="order-title-state" wx:if="{{item.state==0}}">未接单</view>
+            </view>
+            <view class="order-content" bindtap="toOrderDetail" data-id="{{item.id}}">
+              <!-- 自己新增属性，根据item.sellerid找到图片并赋值 -->
+              <view class="order-content-restaurantImg" wx:if="{{item.sellerimg}}">
+                  <image src="{{item.sellerimg}}" mode="scaleToFill" />
+              </view>
+              
+              <view class="order-content-info">
+                <view class="order-content-info-price">￥ {{item.price}}</view>
+                <view class="order-content-info-date">
+                <!-- 格式化item.date，注意8小时时区 -->
+                {{item.formatdate}}</view>
+                <view class="order-content-info-howToDistribute">
+                由 商家 提供服务</view>
+              </view>
+            </view>
+            <view class="order-footer">
+              <view class="order-footer-goToComment" bindtap="jiedan" data-id="{{index}}">接受订单</view>
+              <view class="order-footer-goToComment" bindtap="cancelorder" data-id="{{index}}">取消订单</view>
+            </view>
+          </view>
+        </block> 
+      </view>
+    </swiper-item> 
+    <!-- 第二个 -->
+    <swiper-item style="height:900px;">
+      <view class='swiper_con'>
+        <!-- 循环第二个，处理orderlist分类 -->
+        <block wx:for="{{orderList1}}">
+          <view class="orderList" >
+            <view class="order-title">
+              <view class="order-title-restaurantName">
+                {{item.selleradd.name}}</view>
+              <view class="order-title-state" wx:if="{{item.state==1}}">已接单</view>
+            </view>
+            <view class="order-content" bindtap="toOrderDetail" data-id="{{item.id}}">
+              <!-- 自己新增属性，根据item.sellerid找到图片并赋值 -->
+              <view class="order-content-restaurantImg" wx:if="{{item.sellerimg}}">
+                  <image src="{{item.sellerimg}}" mode="scaleToFill" />
+              </view>
+              
+              <view class="order-content-info">
+                <view class="order-content-info-price">￥ {{item.price}}</view>
+                <view class="order-content-info-date">
+                <!-- 格式化item.date，注意8小时时区 -->
+                {{item.formatdate}}</view>
+                <view class="order-content-info-howToDistribute">
+                由 商家 提供服务</view>
+              </view>
+            </view>
+            <view class="order-footer">
+              <!-- <view class="order-footer-goToComment" bindtap="changeState" data-id="index">确认送达</view> -->
+            </view>
+          </view>
+        </block> 
+      </view>
+    </swiper-item> 
+    <!-- 第三个 -->
+    <swiper-item >
+      <view class='swiper_con'>
+        <!-- 循环第三个，处理orderlist分类 -->
+        <block wx:for="{{orderList2}}">
+          <view class="orderList" >
+            <view class="order-title">
+              <view class="order-title-restaurantName">
+                {{item.selleradd.name}}</view>
+              <view class="order-title-state" wx:if="{{item.state==2}}">已完成</view>
+            </view>
+            <view class="order-content" bindtap="toOrderDetail" data-id="{{item.id}}">
+              <!-- 自己新增属性，根据item.sellerid找到图片并赋值 -->
+              <view class="order-content-restaurantImg" wx:if="{{item.sellerimg}}">
+                  <image src="{{item.sellerimg}}" mode="scaleToFill" />
+              </view>
+              
+              <view class="order-content-info">
+                <view class="order-content-info-price">￥ {{item.price}}</view>
+                <view class="order-content-info-date">
+                <!-- 格式化item.date，注意8小时时区 -->
+                {{item.formatdate}}</view>
+                <view class="order-content-info-howToDistribute">
+                由 商家 提供服务</view>
+              </view>
+            </view>
+            <view class="order-footer">
+              <!-- <view class="order-footer-goToComment" bindtap="comment" data-id="{{index}}">发表评论</view> -->
+            </view>
+          </view>
+        </block> 
+      </view>
+    </swiper-item> 
+  </swiper>
+</view>
